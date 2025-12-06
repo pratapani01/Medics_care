@@ -62,10 +62,17 @@ const ContactForm = () => {
                 <div className="form-group">
                     <label htmlFor="subject" className="block text-sm font-medium text-primary-blue mb-1">Select Inquiry Category</label>
                     <select id="subject" name="subject" required className="w-full p-2 border border-gray-300 rounded-lg bg-white focus:ring-care-blue focus:border-care-blue transition duration-150">
-                        <option value="" disabled>— Choose a category —</option>
-                        <option value="Appointment / OPD Booking">Appointment / OPD Booking</option>
-                        <option value="Emergency / Ambulance Request">Emergency / Ambulance Request</option>
-                        <option value="Other Enquiry">Other Enquiry</option>
+                        <option value="" disabled selected>— Choose a category —</option>
+              <option value="Appointment / OPD Booking">Appointment / OPD Booking</option>
+              <option value="Emergency / Ambulance Request">Emergency / Ambulance Request</option>
+              <option value="Doctor Consultation">Doctor Consultation</option>
+              <option value="Admission / Surgery Enquiry">Admission / Surgery Enquiry</option>
+              <option value="Billing / Insurance Support">Billing / Insurance Support</option>
+              <option value="Diagnostics / Laboratory Reports">Diagnostics / Laboratory Reports</option>
+              <option value="Pharmacy / Prescription Refill">Pharmacy / Prescription Refill</option>
+              <option value="Careers / Job Opportunities">Careers / Job Opportunities</option>
+              <option value="Feedback / Complaints">Feedback / Complaints</option>
+              <option value="Other Enquiry">Other Enquiry</option>
                     </select>
                 </div>
 

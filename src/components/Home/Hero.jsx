@@ -2,13 +2,29 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const quickCallouts = [
+  // Existing Core Services
   { icon: 'fas fa-ambulance', text: '24x7 Emergency' },
   { icon: 'fas fa-procedures', text: 'ICU & Critical Care' },
   { icon: 'fas fa-notes-medical', text: 'Surgical & Diagnostic Support' },
+
+  // Added Specialized OPDs/IPDs
   { icon: 'fas fa-child', text: 'Pediatrics (OPD & IPD)' },
-  { icon: 'fas fa-bone', text: 'Orthopedics & Trauma' },
   { icon: 'fas fa-baby', text: 'Obs & Gynae' },
-  { icon: 'fas fa-phone-square-alt', text: 'Ambulance Facility' },
+  { icon: 'fas fa-bone', text: 'Orthopedics & Trauma' },
+  
+  // Added Diagnostics & Minimally Invasive
+  { icon: 'fas fa-vials', text: 'Pathology & Lab Tests' }, // New
+  { icon: 'fas fa-syringe', text: 'Minimally Invasive Surgery' }, // New
+
+  // Added Support & General Medicine
+  { icon: 'fas fa-stethoscope', text: 'General Medicine OPD' }, // New
+  { icon: 'fas fa-heart-pulse', text: 'Cardiac & Neuro Consultation' }, // New
+  { icon: 'fas fa-wheelchair', text: 'Physiotherapy & Rehab' }, // New
+
+  // Added Essential Facilities
+  { icon: 'fas fa-prescription-bottle-medical', text: 'On-site Pharmacy' }, // New
+  { icon: 'fas fa-phone-square-alt', text: '24x7 Ambulance Facility' }, 
+
 ];
 
 const Hero = () => {
@@ -18,7 +34,7 @@ const Hero = () => {
     // and make sure to place your hero image in the public/images folder.
     <section className="relative h-screen flex items-center bg-primary-blue text-white overflow-hidden" 
              aria-label="Main hero" 
-             style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/facilities.avif')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+             style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/placeholder-hero.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
         {/* Placeholder image tag for the visualization of the hero section */}
         {/*  */}

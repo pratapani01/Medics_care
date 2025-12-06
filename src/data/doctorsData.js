@@ -21,10 +21,10 @@ export const DOCTORS_DATA = [
   { name: 'Dr. Navendu Mohan', specialty: '(General Surgeon)', credentials: 'General Surgery', category: 'surgery', photo: '/images/doctor-m-7.jpeg' },
 
   // Dr. Rohit Agarwal — Physician
-  { name: 'Dr. Rohit Agarwal', specialty: 'MD', credentials: 'General Medicine', category: 'physician', photo: '/images/doctor_p.png' },
+  { name: 'Dr. Rohit Agarwal', specialty: 'MD', credentials: 'Pediatrician', category: 'pediatrics', photo: '/images/doctor-m-11.jpg' },
 
   // Dr. Rohit Singh — Surgery
-  { name: 'Dr. Rohit Singh', specialty: 'MS (Surg.)', credentials: 'General Surgery', category: 'surgery', photo: '/images/doctor_p.png' },
+  { name: 'Dr. Rohit Singh', specialty: 'MS (Surg.)', credentials: 'General Surgery', category: 'surgery', photo: '/images/doctor-m-10.jpeg' },
 
   // Dr. Vartika Awasthi — Gynecology
   { name: 'Dr. Vartika Awasthi', specialty: 'MS (Gyn)', credentials: 'Gynecology', category: 'gyn', photo: '/images/doctor-m-9.jpeg' },
