@@ -1,6 +1,7 @@
 import React from 'react';
 import PageHero from '../components/Layout/PageHero';
 
+// --- ContactInfo Component ---
 const ContactInfo = () => (
     <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg border-t-4 border-medics-red/80">
         <h2 className="text-2xl font-montserrat font-bold text-primary-blue mb-6">Hospital Information</h2>
@@ -21,7 +22,7 @@ const ContactInfo = () => (
             <div>
                 <h4 className="font-bold text-lg text-primary-blue">General Enquiries</h4>
                 <p className="text-secondary-gray text-sm">Emergency: <a href="tel:+918700127481" className="font-bold text-primary-blue hover:text-medics-red">+91 8700127481</a></p>
-                <p className="text-secondary-gray text-sm">Appointments: <a href="tel:+918700127482" className="font-bold text-primary-blue hover:text-medics-red">+91 8700127482</a></p>
+                <p className="text-secondary-gray text-sm">Appointments: <a href="tel:+918700127481" className="font-bold text-primary-blue hover:text-medics-red">+91 8700127481</a></p>
             </div>
         </div>
 
@@ -36,12 +37,39 @@ const ContactInfo = () => (
     </div>
 );
 
+// --- ContactForm Component (with WhatsApp Logic) ---
 const ContactForm = () => {
-    // In a real application, you would handle form submission here (e.g., using Formik or a custom hook)
+    
+    const WHATSAPP_NUMBER = '918700127481'; 
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Placeholder for submitting to WhatsApp or an API
-        alert("Inquiry submitted! (Functionality needs backend/WhatsApp integration)");
+        
+    
+        const formData = new FormData(e.target);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const subject = formData.get('subject');
+        const message = formData.get('message');
+        
+
+        const messageText = `*Medics Care Hospital - Web Inquiry*
+        \n\nName: ${name}
+        \nEmail: ${email}
+        \nInquiry Type: ${subject}
+        \nMessage: ${message}`;
+        
+    
+        const encodedMessage = encodeURIComponent(messageText);
+        
+    
+        const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+        
+    
+        window.open(whatsappURL, '_blank');
+
+    
+        e.target.reset();
     };
 
     return (
@@ -63,16 +91,16 @@ const ContactForm = () => {
                     <label htmlFor="subject" className="block text-sm font-medium text-primary-blue mb-1">Select Inquiry Category</label>
                     <select id="subject" name="subject" required className="w-full p-2 border border-gray-300 rounded-lg bg-white focus:ring-care-blue focus:border-care-blue transition duration-150">
                         <option value="" disabled selected>— Choose a category —</option>
-              <option value="Appointment / OPD Booking">Appointment / OPD Booking</option>
-              <option value="Emergency / Ambulance Request">Emergency / Ambulance Request</option>
-              <option value="Doctor Consultation">Doctor Consultation</option>
-              <option value="Admission / Surgery Enquiry">Admission / Surgery Enquiry</option>
-              <option value="Billing / Insurance Support">Billing / Insurance Support</option>
-              <option value="Diagnostics / Laboratory Reports">Diagnostics / Laboratory Reports</option>
-              <option value="Pharmacy / Prescription Refill">Pharmacy / Prescription Refill</option>
-              <option value="Careers / Job Opportunities">Careers / Job Opportunities</option>
-              <option value="Feedback / Complaints">Feedback / Complaints</option>
-              <option value="Other Enquiry">Other Enquiry</option>
+                        <option value="Appointment / OPD Booking">Appointment / OPD Booking</option>
+                        <option value="Emergency / Ambulance Request">Emergency / Ambulance Request</option>
+                        <option value="Doctor Consultation">Doctor Consultation</option>
+                        <option value="Admission / Surgery Enquiry">Admission / Surgery Enquiry</option>
+                        <option value="Billing / Insurance Support">Billing / Insurance Support</option>
+                        <option value="Diagnostics / Laboratory Reports">Diagnostics / Laboratory Reports</option>
+                        <option value="Pharmacy / Prescription Refill">Pharmacy / Prescription Refill</option>
+                        <option value="Careers / Job Opportunities">Careers / Job Opportunities</option>
+                        <option value="Feedback / Complaints">Feedback / Complaints</option>
+                        <option value="Other Enquiry">Other Enquiry</option>
                     </select>
                 </div>
 
@@ -81,14 +109,16 @@ const ContactForm = () => {
                     <textarea id="message" name="message" rows="5" required className="w-full p-2 border border-gray-300 rounded-lg focus:ring-care-blue focus:border-care-blue transition duration-150"></textarea>
                 </div>
 
+                {/* Button Text Updated */}
                 <button type="submit" className="w-full bg-medics-red text-white py-3 rounded-lg font-bold hover:bg-red-700 transition duration-300 shadow-md">
-                    Submit Inquiry
+                    Submit Inquiry via WhatsApp
                 </button>
             </form>
         </div>
     );
 };
 
+// --- HospitalMap Component ---
 const HospitalMap = () => (
     <section className="hospital-map container mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <h2 className="text-3xl font-montserrat font-bold text-center mb-6 text-primary-blue">
@@ -96,7 +126,7 @@ const HospitalMap = () => (
         </h2>
         <div className="bg-white rounded-xl overflow-hidden shadow-2xl">
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.118166326966!2d80.91212147534291!3d26.801530364859868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd6273a868a9%3A0x11c1eb801fe6586b!2sMeddics%20Hospital!5e1!3m2!1sen!2sin!4v1762070122496!5m2!1sen!2sin" // Use your real map embed URL here
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.118166326966!2d80.91212147534291!3d26.801530364859868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd6273a868a9%3A0x11c1eb801fe6586b!2sMeddics%20Hospital!5e1!3m2!1sen!2sin!4v1762070122496!5m2!1sen!2sin" // Replace with your actual Google Maps embed link
                 width="100%" 
                 height="450" 
                 style={{ border: 0 }} 
@@ -110,24 +140,25 @@ const HospitalMap = () => (
 );
 
 
+// --- Contact Page Component ---
 const Contact = () => {
-  return (
-    <>
-        <PageHero 
-            title="Get In Touch With Us" 
-            subtitle="We are here 24/7 to answer your questions and assist with appointments. Feel free to reach out via phone, email, or our contact form."
-        />
+    return (
+        <>
+            <PageHero 
+                title="Get In Touch With Us" 
+                subtitle="We are here 24/7 to answer your questions and assist with appointments. Feel free to reach out via phone, email, or our contact form."
+            />
 
-        <section className="contact-grid container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <ContactInfo />
-                <ContactForm />
-            </div>
-        </section>
+            <section className="contact-grid container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <ContactInfo />
+                    <ContactForm />
+                </div>
+            </section>
 
-        <HospitalMap />
-    </>
-  );
+            <HospitalMap />
+        </>
+    );
 };
 
 export default Contact;
