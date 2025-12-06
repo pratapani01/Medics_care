@@ -4,7 +4,7 @@ const DoctorCard = ({ doctor }) => {
   return (
     <article className="doctor-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-100">
       {/* Photo (Ensure images are in public/images) */}
-      <div className="w-full h-48 bg-gray-200 overflow-hidden">
+      <div className="w-full aspect-square bg-gray-200 overflow-hidden sm:h-auto">
         <img 
           src={doctor.photo || '/images/doctor_p.png'} 
           alt={doctor.name} 

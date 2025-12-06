@@ -13,7 +13,7 @@ import PageHero from '../components/Layout/PageHero'; // Reusable page hero
 
 const specialties = [
   { key: 'all', label: 'All Specialties' },
-  { key: 'cardiology', label: 'Cardiology' },
+  // { key: 'cardiology', label: 'Cardiology' },
   { key: 'pediatrics', label: 'Pediatrics' },
   { key: 'orthopedics', label: 'Orthopedics' },
   { key: 'neuro', label: 'Neurology' },
