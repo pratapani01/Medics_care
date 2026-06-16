@@ -22,6 +22,7 @@ const specialties = [
   { key: 'physician', label: 'Physician' },
   { key: 'surgery', label: 'Surgery' },
   { key: 'gyn', label: 'Gynaecology' },
+  { key: 'psychiatry', label: 'Psychiatry' },
 ];
 
 
